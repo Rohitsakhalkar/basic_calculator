@@ -1,11 +1,12 @@
 # Basic Calculator
 
-A simple web-based calculator that supports basic arithmetic operations and keyboard input.
+A simple web-based calculator that supports basic arithmetic operations, Memory Funtions, Scientific calcultions and keyboard input.
 
 ## Features
 - Perform basic arithmetic operations: addition, subtraction, multiplication, and division.
 - Supports keyboard input for numbers and operations.
-- Clear (`C`) and delete (`DEL`) functionality.
+- Supports Scientific Calculations(sin,cos,tan,log,exp,Squareroot,square).
+- Supports Memory Funtions(M+,M-,MS,MR,MC).
 - Responsive design for various screen sizes.
 
 ## Technologies Used
@@ -15,9 +16,16 @@ A simple web-based calculator that supports basic arithmetic operations and keyb
 
 ## Usage
 - Use the buttons or keyboard to input numbers and operations.
-- Press Enter to calculate the result.
-- Use C to clear the display and DEL to delete the last character.
+- Press 'Enter' or '=' to calculate the result.
+- Use C to clear the display.
+- MS to store memory.
+- M+ to add memory.
+- M- to substract memory.
+- MR to recall memory.
+- MC to clear memory.
+
 
 ## Future Enhancements
-- Add scientific calculator functions.
-- Store and display calculation history
+- To add more Scientific Functions.
+- To add converter.
+- GST calculator.
