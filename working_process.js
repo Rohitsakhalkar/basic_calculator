@@ -15,7 +15,14 @@ let display = document.getElementById('display');
   case '-':appendValue('-'); break;
   case '*':appendValue('*'); break;
   case '/':appendValue('/'); break;
-  case 'Enter':
+  case '%':appendValue('%');break;
+  case '.':appendValue('.'); break;
+  case '(':appendValue('('); break;
+  case ')':appendValue(')'); break;
+  case '=': event.preventDefault(); 
+    calculateResult();
+    break;
+  case 'Enter' :
     event.preventDefault(); 
     calculateResult();
     break;
@@ -66,4 +73,69 @@ function calculateResult() {
 
 function scrollDisplay() {
   display.scrollTop = display.scrollHeight;
+}
+function more_op()
+{
+   const moreOp = document.getElementById('default_options');
+   const back=op = document.getElementById('more');
+   moreOp.classList.toggle('hidden');
+    back.classList.toggle('hidden');
+}
+//Memory Functions
+let memory = 0;
+function memoryAdd() {
+  const display = document.getElementById('display');
+  memory += parseFloat(display.value) || 0;
+  display.value = '';
+}
+function memorySubtract() { 
+  const display = document.getElementById('display');
+  memory -= parseFloat(display.value) || 0;
+  display.value = '';
+}
+function memoryClear() {
+  const display = document.getElementById('display');
+  memory = 0;
+  display.value = '';
+}
+function memoryRecall() {
+  const display = document.getElementById('display');
+  display.value = memory.toFixed(5);
+  scrollDisplay();
+}
+function memoryStore() {
+  const display = document.getElementById('display');
+  memory = parseFloat(display.value) || 0;
+  display.value = '';
+}
+// Scientific Functions
+function calculateSquare() {
+  const display = document.getElementById('display');
+  display.value = Math.pow(parseFloat(display.value) || 0, 2).toFixed(5);
+}
+function calculateSquareRoot() {
+  const display = document.getElementById('display');
+  const value = parseFloat(display.value) || 0;
+  display.value = value >= 0 ? Math.sqrt(value).toFixed(5) : 'Error';
+}
+function calculateSin() {
+  const display = document.getElementById('display');
+  display.value = Math.sin(parseFloat(display.value) || 0).toFixed(5);
+}
+function calculateCos() {
+  const display = document.getElementById('display');
+  display.value = Math.cos(parseFloat(display.value) || 0).toFixed(5);
+}
+function calculateTan() {
+  const display = document.getElementById('display');
+  display.value = Math.tan(parseFloat(display.value) || 0).toFixed(5);
+}
+function calculateLog() {
+  const display = document.getElementById('display');
+  const value = parseFloat(display.value) || 0;
+  display.value = value > 0 ? Math.log10(value).toFixed(5) : 'Error';
+}
+function calculateExp() {
+  const display = document.getElementById('display');
+  display.value = Math.exp(parseFloat(display.value) || 0).toFixed(5);
 }

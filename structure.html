@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Calculator with History</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="calculator">
-    <textarea id="display" readonly></textarea>
-    <div class="buttons">
-      <button onclick="clearDisplay()">C</button>
-      <button onclick="appendValue('/')">÷</button>
-      <button onclick="appendValue('*')">×</button>
-      <button onclick="deleteLast()">DEL</button>
-
-      <button onclick="appendValue('7')">7</button>
-      <button onclick="appendValue('8')">8</button>
-      <button onclick="appendValue('9')">9</button>
-      <button onclick="appendValue('-')">-</button>
-
-      <button onclick="appendValue('4')">4</button>
-      <button onclick="appendValue('5')">5</button>
-      <button onclick="appendValue('6')">6</button>
-      <button onclick="appendValue('+')">+</button>
-
-      <button onclick="appendValue('1')">1</button>
-      <button onclick="appendValue('2')">2</button>
-      <button onclick="appendValue('3')">3</button>
-      <button onclick="calculateResult()">=</button>
-
-      <button onclick="appendValue('0')" class="zero">0</button>
-      <button onclick="appendValue('.')">.</button>
-    </div>
-  </div>
-  <script src="working_process.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+    <body>
+        <div class="calculator">
+          <textarea id="display" readonly></textarea>
+            <div class="buttons">
+                    <!--< Simple Arithmetic Operations >-->
+                <div class="default" id="default_options">
+                  <button onclick="clearDisplay()">C</button>
+                  <button onclick="deleteLast()"><?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 84.27" style="enable-background:new 0 0 122.88 84.27" xml:space="preserve"><g><path d="M41,0h70.56c3.12,0,5.95,1.27,8,3.32c2.05,2.05,3.32,4.88,3.32,8v61.63c0,3.12-1.27,5.95-3.32,8 c-2.05,2.05-4.88,3.32-8,3.32H40.67l-0.18-0.01c-10.44-0.6-19.13-13.09-27.57-25.21C9.21,53.72,5.55,48.46,2.03,44.62L0,42.41 l2.01-2.23c4.39-4.89,8.55-10.75,12.56-16.39C23.35,11.41,31.45,0,41,0L41,0z M83.95,24.11c2.22-2.26,5.84-2.27,8.07-0.02 c2.23,2.24,2.24,5.9,0.02,8.15l-9.75,9.89l9.76,9.9c2.21,2.24,2.17,5.87-0.07,8.1c-2.24,2.24-5.84,2.23-8.05-0.01l-9.7-9.83 l-9.72,9.85c-2.22,2.26-5.84,2.27-8.07,0.02c-2.23-2.24-2.24-5.89-0.02-8.15l9.75-9.89l-9.76-9.9c-2.2-2.24-2.17-5.87,0.07-8.1 c2.24-2.24,5.84-2.23,8.05,0.01l9.7,9.83L83.95,24.11L83.95,24.11z M111.56,6.62H41c-6.15,0-13.3,10.07-21.06,20.98 c-3.55,5-7.22,10.17-11.1,14.77c3.19,3.81,6.33,8.33,9.51,12.89c7.48,10.74,15.18,21.8,22.34,22.38h70.87 c1.29,0,2.46-0.53,3.31-1.38c0.85-0.85,1.38-2.03,1.38-3.31V11.32c0-1.29-0.53-2.46-1.38-3.32C114.02,7.15,112.85,6.62,111.56,6.62 L111.56,6.62z"/></g></svg></button>
+                  <button onclick="appendValue('%')"><svg fill="#000000" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-3.8 -3.8 45.60 45.60" xml:space="preserve" stroke="#000000" stroke-width="0.6839999999999999" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M0.293,36.293l36-36l1.414,1.414l-36,36L0.293,36.293z"></path> <path d="M6,12c3.309,0,6-2.691,6-6S9.309,0,6,0S0,2.691,0,6S2.691,12,6,12z M6,2c2.206,0,4,1.794,4,4s-1.794,4-4,4S2,8.206,2,6 S3.794,2,6,2z"></path> <path d="M32,26c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6S35.309,26,32,26z M32,36c-2.206,0-4-1.794-4-4s1.794-4,4-4 s4,1.794,4,4S34.206,36,32,36z"></path> </g> </g></svg></button>
+                  <button onclick="appendValue('/')"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20M13 6C13 6.55228 12.5523 7 12 7C11.4477 7 11 6.55228 11 6C11 5.44772 11.4477 5 12 5C12.5523 5 13 5.44772 13 6ZM13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                  <button onclick="appendValue('7')">7</button>
+                  <button onclick="appendValue('8')">8</button>
+                  <button onclick="appendValue('9')">9</button>
+                  <button onclick="appendValue('*')"><?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="20px" viewBox="0 0 122.878 122.88" enable-background="new 0 0 122.878 122.88" xml:space="preserve"><g><path d="M1.426,8.313c-1.901-1.901-1.901-4.984,0-6.886c1.901-1.902,4.984-1.902,6.886,0l53.127,53.127l53.127-53.127 c1.901-1.902,4.984-1.902,6.887,0c1.901,1.901,1.901,4.985,0,6.886L68.324,61.439l53.128,53.128c1.901,1.901,1.901,4.984,0,6.886 c-1.902,1.902-4.985,1.902-6.887,0L61.438,68.326L8.312,121.453c-1.901,1.902-4.984,1.902-6.886,0 c-1.901-1.901-1.901-4.984,0-6.886l53.127-53.128L1.426,8.313L1.426,8.313z"/></g></svg></button>
+                  <button onclick="appendValue('5')">5</button>
+                  <button onclick="appendValue('6')">6</button>
+                  <button onclick="appendValue('4')">4</button>
+                  <button onclick="appendValue('+')"><?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 122.881 122.88" enable-background="new 0 0 122.881 122.88" xml:space="preserve"><g><path d="M56.573,4.868c0-0.655,0.132-1.283,0.37-1.859c0.249-0.6,0.61-1.137,1.056-1.583C58.879,0.545,60.097,0,61.44,0 c0.658,0,1.287,0.132,1.863,0.371c0.012,0.005,0.023,0.011,0.037,0.017c0.584,0.248,1.107,0.603,1.543,1.039 c0.881,0.88,1.426,2.098,1.426,3.442c0,0.03-0.002,0.06-0.006,0.089v51.62l51.619,0c0.029-0.003,0.061-0.006,0.09-0.006 c0.656,0,1.285,0.132,1.861,0.371c0.014,0.005,0.025,0.011,0.037,0.017c0.584,0.248,1.107,0.603,1.543,1.039 c0.881,0.88,1.428,2.098,1.428,3.441c0,0.654-0.133,1.283-0.371,1.859c-0.248,0.6-0.609,1.137-1.057,1.583 c-0.445,0.445-0.98,0.806-1.58,1.055v0.001c-0.576,0.238-1.205,0.37-1.861,0.37c-0.029,0-0.061-0.002-0.09-0.006l-51.619,0.001 v51.619c0.004,0.029,0.006,0.06,0.006,0.09c0,0.656-0.133,1.286-0.371,1.861c-0.006,0.014-0.012,0.025-0.018,0.037 c-0.248,0.584-0.602,1.107-1.037,1.543c-0.883,0.882-2.1,1.427-3.443,1.427c-0.654,0-1.283-0.132-1.859-0.371 c-0.6-0.248-1.137-0.609-1.583-1.056c-0.445-0.444-0.806-0.98-1.055-1.58h-0.001c-0.239-0.575-0.371-1.205-0.371-1.861 c0-0.03,0.002-0.061,0.006-0.09V66.303H4.958c-0.029,0.004-0.059,0.006-0.09,0.006c-0.654,0-1.283-0.132-1.859-0.371 c-0.6-0.248-1.137-0.609-1.583-1.056c-0.445-0.445-0.806-0.98-1.055-1.58H0.371C0.132,62.726,0,62.097,0,61.44 c0-0.655,0.132-1.283,0.371-1.859c0.249-0.6,0.61-1.137,1.056-1.583c0.881-0.881,2.098-1.426,3.442-1.426 c0.031,0,0.061,0.002,0.09,0.006l51.62,0l0-51.62C56.575,4.928,56.573,4.898,56.573,4.868L56.573,4.868z"/></g></svg></button>
+                  <button onclick="appendValue('1')">1</button>
+                  <button onclick="appendValue('2')">2</button>
+                  <button onclick="appendValue('3')">3</button>
+                  <button onclick="appendValue('-')"><?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="10px" viewBox="0 0 122.881 9.737" enable-background="new 0 0 122.881 9.737" xml:space="preserve"><g><path d="M117.922,0.006C117.951,0.002,117.982,0,118.012,0c0.656,0,1.285,0.132,1.861,0.371c0.014,0.005,0.025,0.011,0.037,0.017 c0.584,0.248,1.107,0.603,1.543,1.039c0.881,0.88,1.428,2.098,1.428,3.441c0,0.654-0.133,1.283-0.371,1.859 c-0.248,0.6-0.609,1.137-1.057,1.583c-0.445,0.445-0.98,0.806-1.58,1.055v0.001c-0.576,0.238-1.205,0.37-1.861,0.37 c-0.029,0-0.061-0.002-0.09-0.006c-37.654,0-75.309,0.001-112.964,0.001c-0.029,0.004-0.059,0.006-0.09,0.006 c-0.654,0-1.283-0.132-1.859-0.371c-0.6-0.248-1.137-0.609-1.583-1.056C0.981,7.865,0.621,7.33,0.372,6.73H0.371 C0.132,6.154,0,5.525,0,4.869C0,4.215,0.132,3.586,0.371,3.01c0.249-0.6,0.61-1.137,1.056-1.583 c0.881-0.881,2.098-1.426,3.442-1.426c0.031,0,0.061,0.002,0.09,0.006C42.613,0.006,80.268,0.006,117.922,0.006L117.922,0.006z"/></g></svg></button>
+                  <button onclick="appendValue('0')" >0</button>
+                  <button onclick="appendValue('.')"><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="2" fill="#000000"></circle> </g></svg></button>
+                  <button onclick="calculateResult()"><svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 121.805 121.805" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M7.308,85.264h107.188c4.037,0,7.309-3.271,7.309-7.31s-3.271-7.309-7.309-7.309H7.308C3.271,70.646,0,73.916,0,77.954 S3.271,85.264,7.308,85.264z"></path> <path d="M7.308,51.158h107.188c4.037,0,7.309-3.272,7.309-7.309c0-4.037-3.271-7.308-7.309-7.308H7.308 C3.271,36.541,0,39.812,0,43.849C0,47.886,3.271,51.158,7.308,51.158z"></path> </g> </g> </g></svg></button>
+                  <button id="more_options" onclick="more_op()"><?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="10px" viewBox="0 0 122.88 29.956" enable-background="new 0 0 122.88 29.956" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M122.88,14.978c0,8.271-6.708,14.979-14.979,14.979s-14.976-6.708-14.976-14.979 C92.926,6.708,99.631,0,107.901,0S122.88,6.708,122.88,14.978L122.88,14.978z M29.954,14.978c0,8.271-6.708,14.979-14.979,14.979 S0,23.248,0,14.978C0,6.708,6.705,0,14.976,0S29.954,6.708,29.954,14.978L29.954,14.978z M76.417,14.978 c0,8.271-6.708,14.979-14.979,14.979c-8.27,0-14.978-6.708-14.978-14.979C46.46,6.708,53.168,0,61.438,0 C69.709,0,76.417,6.708,76.417,14.978L76.417,14.978z"/></g></svg></button>
+              </div>
+                  <!--< Scientific And Memory Functions > -->
+                <div class="hidden" id="more" >
+                  <div class="default">
+                    <button onclick="calculateSin()">Sin</button>
+                    <button onclick="calculateCos()">Cos</button>
+                    <button onclick="calculateTan()">Tan</button>
+                    <button onclick="calculateLog()">Log</button>
+                    <button onclick="memoryAdd()">M+</button>
+                    <button onclick="memorySubtract()">M-</button>
+                    <button onclick="memoryClear()">MC</button>
+                    <button onclick="memoryRecall()">MR</button>
+                    <button onclick=" memoryStore()">MS</button>
+                    <button onclick=" calculateExp()">Exp</button>
+                    <button onclick="calculateSquare()">x<sup>y</sup></button>
+                    <button onclick="calculateSquareRoot()">√x</button>
+                    <button onclick="appendValue('(')"><svg fill="#000000" width="20px" height="20px" viewBox="-6.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.48"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>parenleft</title> <path d="M12.438 0.031h-2.531c-1.031 2.375-1.813 4.938-2.344 7.719s-0.813 5.625-0.813 8.531c0 2.719 0.25 5.344 0.688 7.875 0.469 2.5 1.063 4.688 1.844 6.531h2.406c-0.813-1.906-1.469-4.188-1.938-6.719-0.438-2.563-0.656-5.219-0.656-7.969 0-2.969 0.281-5.875 0.875-8.656 0.625-2.781 1.438-5.188 2.469-7.313z"></path> </g></svg></button>
+                    <button onclick="appendValue(')')"><svg fill="#000000" viewBox="-6.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>parenleft</title> <path d="M12.438 0.031h-2.531c-1.031 2.375-1.813 4.938-2.344 7.719s-0.813 5.625-0.813 8.531c0 2.719 0.25 5.344 0.688 7.875 0.469 2.5 1.063 4.688 1.844 6.531h2.406c-0.813-1.906-1.469-4.188-1.938-6.719-0.438-2.563-0.656-5.219-0.656-7.969 0-2.969 0.281-5.875 0.875-8.656 0.625-2.781 1.438-5.188 2.469-7.313z"></path> </g></svg></button>
+                    <button onclick="more_op()"><svg fill="#000000" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 26.676 26.676" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M26.105,21.891c-0.229,0-0.439-0.131-0.529-0.346l0,0c-0.066-0.156-1.716-3.857-7.885-4.59 c-1.285-0.156-2.824-0.236-4.693-0.25v4.613c0,0.213-0.115,0.406-0.304,0.508c-0.188,0.098-0.413,0.084-0.588-0.033L0.254,13.815 C0.094,13.708,0,13.528,0,13.339c0-0.191,0.094-0.365,0.254-0.477l11.857-7.979c0.175-0.121,0.398-0.129,0.588-0.029 c0.19,0.102,0.303,0.295,0.303,0.502v4.293c2.578,0.336,13.674,2.33,13.674,11.674c0,0.271-0.191,0.508-0.459,0.562 C26.18,21.891,26.141,21.891,26.105,21.891z"></path> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <script src="working_process.js"></script>
+    </body>
 </html>

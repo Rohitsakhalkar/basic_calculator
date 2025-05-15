@@ -1,22 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     height: 100vh;
-    background: #0000006a;
+    background:  #696e71;
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
+ 
   }
-  
+  /* Calculator Styles */
   .calculator {
     background: #1a1818;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 30px 30px 30px rgba(0,0,0,0.2);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
     border: 2px ridge;
-    width: 300px;
   }
-  
+  /* Display Styles */
   #display {
     width: 100%;
     height: 120px;
@@ -30,33 +32,65 @@ body {
     margin-bottom: 10px;
     background-color: #2b252500;
     resize: none;
-    color:#fff
+    color:#ffffff8b
   }
-  
+  /* Button Styles */
   .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
   
+  }
   button {
+    width: 3.7rem;
+    height: 3.7rem;
     padding: 15px;
-    font-size: 18px;
-    border: none;
-    background: hsl(33, 86%, 53%);
-    border-radius: 10px;
-    box-shadow: 
-    5px 5px 15px rgba(239, 124, 10, 0.059), 
-    -5px -5px 15px rgba(16, 16, 16, 0.8); 
+    font: 18px  "IBM Plex Sans", sans-serif;
+    border: ridge rgba(34, 32, 32, 0.615) 3px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #fa9704 0%, #ab6604 100%);
+    box-shadow: 0 2px #ee9d06, 0 1px 10px rgba(0,0,0,0.2);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 10px rgba(0, 0, 0, 0.501));
     cursor: pointer;
     transition: background 0.3s;
   }
-  
   button:hover {
     background-color: #ccc;
   }
-  
-  .zero {
-    grid-column: span 2;
+  /* more options style*/
+.default{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.visible{
+  display:none;
+}
+.hidden{
+  display:none;
+}
+@media(max-width:300px){
+  .body{
+   display:flex;
+   flex-wrap: wrap;
   }
-  
+  .default{
+    grid-template-columns: repeat(3, 1fr);
+   
+}
+}
+@media (orientation: landscape) {
+  .calculator {
+    transform: rotate(90deg);
+    
+  }
+  .default{
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+  }
+  @media (max-height:820px)
+  {
+    .default{
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+  }  
+}
