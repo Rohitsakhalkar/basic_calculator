@@ -78,21 +78,4 @@ body {
    
 }
 }
-/*For Rotated screen*/
-@media (orientation: landscape) {
-  .calculator {
-    transform: rotate(90deg);
-    
-  }
-  .default{
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-  }
-  @media (max-height:820px)
-  {
-    .default{
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-    }
-  }  
-}
+
