@@ -29,3 +29,10 @@ A simple web-based calculator that supports basic arithmetic operations, Memory 
 - To add more Scientific Functions.
 - To add converter.
 - GST calculator.
+
+## 👨‍💻 Author
+### Hey there! I’m Rohit Sakhalkar, a frontend developer with a passion for real-world UI development and solving problems with clean code.
+
+-🔗 GitHub: @Rohitsakhalkar
+
+-📬 Email: rohitsakhalkar3@gmail.com
